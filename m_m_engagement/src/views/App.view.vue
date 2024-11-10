@@ -2,6 +2,7 @@
   <Header />
   <div id="content">
     <WelcomeMessage />
+    <UploadFile />
   </div>
 </template>
 
@@ -13,5 +14,6 @@
 
 <script setup>
 import Header from '@/components/Header.vue'
+import UploadFile from '@/components/UploadFile.vue'
 import WelcomeMessage from '@/components/WelcomeMessage.vue'
 </script>
