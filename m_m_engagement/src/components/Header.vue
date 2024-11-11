@@ -2,7 +2,10 @@
   <div class="w-full">
     <header>
       <div class="header-wrapper">
-        <div class="logo parisienne-regular">Mohammed & Mariam</div>
+        <!-- <div class="logo parisienne-regular">Mohammed & Mariam</div> -->
+        <div class="logo parisienne-regular font-medium">
+          <RouterLink to="/">M & M</RouterLink>
+        </div>
       </div>
     </header>
   </div>
