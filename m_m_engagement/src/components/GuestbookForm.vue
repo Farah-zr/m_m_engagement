@@ -68,6 +68,11 @@ import Textarea from './ui/textarea/Textarea.vue'
 import { ref } from 'vue'
 import { Icon } from '@iconify/vue'
 
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY
+const FROM_EMAIL = import.meta.env.VITE_FROM_EMAIL
+
 const guestName = ref('')
 const guestMsg = ref('')
 
@@ -77,14 +82,14 @@ function sendGuestMsg() {
   loading.value = true
 
   send(
-    'service_mvq6riv',
-    'template_48d2bbg',
+    SERVICE_ID,
+    TEMPLATE_ID,
     {
       from_name: guestName.value,
-      from_email: 'farahzr728@gmail.com',
+      from_email: FROM_EMAIL,
       message: guestMsg.value
     },
-    'A00b8LK6oS9uKK866'
+    PUBLIC_KEY
   )
     .then((res) => {
       console.log('Sent', res.status, res.text)
