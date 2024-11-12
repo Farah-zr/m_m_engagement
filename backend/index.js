@@ -31,6 +31,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", upload.array("files"), async (req, res) => {
+  res.status(202).json({ message: "Upload started" });
+
   try {
     const auth = new google.auth.GoogleAuth({
       keyFile: "key.json",

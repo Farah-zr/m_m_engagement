@@ -12,5 +12,14 @@ export default defineConfig({
       // '@': fileURLToPath(new URL('./src', import.meta.url))
       '@': path.resolve(__dirname, 'src')
     }
+  },
+  server: {
+    proxy: {
+      '/upload': {
+        target: 'https://m-m-engagement-mjxgr5qnw-farahs-projects.vercel.app',
+        changeOrigin: true,
+        secure: true
+      }
+    }
   }
 })

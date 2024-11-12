@@ -9,12 +9,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: WelcomeView
+    },
+    {
+      path: '/upload',
+      name: 'upload',
+      component: UploadView
     }
-    // {
-    //   path: '/upload',
-    //   name: 'upload',
-    //   component: UploadView
-    // }
   ]
 })
 
