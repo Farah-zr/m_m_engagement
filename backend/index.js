@@ -12,13 +12,15 @@ const app = express();
 // const AUTH_URL = process.env.AUTH_SCOPE;
 // const FOLDER_ID = process.env.FOLDER_ID;
 
-const storage = multer.diskStorage({
-  destination: "uploads",
-  filename: (req, file, callback) => {
-    const extension = file.originalname.split(".").pop();
-    callback(null, `${file.fieldname}-${Date.now()}.${extension}`);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: "uploads",
+//   filename: (req, file, callback) => {
+//     const extension = file.originalname.split(".").pop();
+//     callback(null, `${file.fieldname}-${Date.now()}.${extension}`);
+//   },
+// });
+
+const storage = multer.memoryStorage();
 
 const upload = multer({ storage: storage });
 
@@ -29,6 +31,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", upload.array("files"), async (req, res) => {
+  res.status(202).json({ message: "Upload started" });
+
   try {
     const auth = new google.auth.GoogleAuth({
       keyFile: "key.json",
@@ -44,6 +48,7 @@ app.post("/upload", upload.array("files"), async (req, res) => {
 
     for (let i = 0; i < req.files.length; i++) {
       const file = req.files[i];
+
       const response = await drive.files.create({
         requestBody: {
           name: file.originalname,
@@ -51,7 +56,8 @@ app.post("/upload", upload.array("files"), async (req, res) => {
           parents: ["1Jf6W0Wmc6WaUeTijcxGQHpqUFYQ4m8fP"],
         },
         media: {
-          body: fs.createReadStream(file.path),
+          // body: fs.createReadStream(file.path),
+          body: Buffer.from(file.buffer),
         },
       });
 

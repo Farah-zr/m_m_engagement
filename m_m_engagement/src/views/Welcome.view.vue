@@ -1,7 +1,8 @@
 <template>
   <Header />
   <div id="content">
-    <WelcomeMessage />
+    <!-- <WelcomeMessage /> -->
+    <GuestbookForm />
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 </style>
 
 <script setup>
+import GuestbookForm from '@/components/GuestbookForm.vue'
 import Header from '@/components/Header.vue'
 import WelcomeMessage from '@/components/WelcomeMessage.vue'
 </script>

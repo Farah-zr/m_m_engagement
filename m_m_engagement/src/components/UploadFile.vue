@@ -35,6 +35,7 @@ const { files, open, reset, onCancel, onChange } = useFileDialog({
 
 onChange((files) => {
   uploadedFiles.value = Array.from(files)
+  console.log(uploadedFiles.value)
 })
 
 function upload() {
@@ -45,7 +46,7 @@ function upload() {
       formData.append('files', file, file.name)
     })
 
-    fetch('http://localhost:5000/upload', {
+    fetch('https://m-m-engagement-git-dev-farahs-projects.vercel.app/upload', {
       method: 'POSt',
       body: formData
     })

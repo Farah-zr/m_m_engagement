@@ -18,8 +18,8 @@
     </div>
 
     <div class="text-[18px]">
-      <!-- <RouterLink to="/upload">{{ 'Share the love' }}</RouterLink> -->
-      <RouterLink to="/">{{ 'Share the love' }}</RouterLink>
+      <RouterLink to="/upload">{{ 'Share the love' }}</RouterLink>
+      <!-- <RouterLink to="/">{{ 'Share the love' }}</RouterLink> -->
       <Icon icon="material-symbols-light:arrow-right-alt" class="inline ml-1" />
     </div>
 
