@@ -24,6 +24,10 @@ const upload = multer({ storage: storage });
 
 app.use(cors());
 
+app.get("/", (req, res) => {
+  res.send("Hello");
+});
+
 app.post("/upload", upload.array("files"), async (req, res) => {
   try {
     const auth = new google.auth.GoogleAuth({
@@ -60,8 +64,12 @@ app.post("/upload", upload.array("files"), async (req, res) => {
   }
 });
 
-// app.listen(5000, () => {
-//   console.log("app is listening on port 5000");
+// app.get("/upload", (req, res) => {
+//   return upload.array("files");
 // });
+
+app.listen(5000, () => {
+  console.log("app is listening on port 5000");
+});
 
 module.exports = app;
