@@ -9,6 +9,9 @@ const fs = require("fs");
 
 const app = express();
 
+// const AUTH_URL = process.env.AUTH_SCOPE;
+// const FOLDER_ID = process.env.FOLDER_ID;
+
 const storage = multer.diskStorage({
   destination: "uploads",
   filename: (req, file, callback) => {
@@ -57,6 +60,8 @@ app.post("/upload", upload.array("files"), async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("app is listening on port 5000");
-});
+// app.listen(5000, () => {
+//   console.log("app is listening on port 5000");
+// });
+
+module.exports = app;
