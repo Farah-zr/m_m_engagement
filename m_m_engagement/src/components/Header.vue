@@ -19,7 +19,7 @@ header {
   width: 100%;
   height: 40px;
   position: relative;
-  background: rgba(var(--header), 0.7);
+  background: rgba(var(--header), 0.75);
   border-bottom: 1px solid var(--border);
   box-shadow: 0px 1px 1px rgba(var(--foreground), 0.1);
 }
@@ -35,7 +35,7 @@ header {
 
 .logo {
   font-size: 22px;
-  color: var(--earthy);
+  color: var(--sage);
 }
 </style>
 
