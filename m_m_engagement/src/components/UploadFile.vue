@@ -16,8 +16,8 @@
 <style lang="scss" scoped>
 .card {
   border-radius: 6px;
-  background-color: rgba(var(--card), 0.5);
-  border: 1px solid var(--border);
+  background-color: rgba(var(--card-rgb), 0.5);
+  border: 1px solid var(--border-hex);
   padding: 8px 5px;
 }
 </style>

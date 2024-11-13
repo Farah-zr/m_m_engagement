@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    --background: #fefefc;
-    --border: #e5e5e5;
+    --background-hex: #fefefc;
+    --border-hex: #e5e5e5;
 
-    --header: 255, 255, 255;
-    --card: 254, 254, 252;
-    --foreground: 41, 41, 41;
+    --header-rgb: 255, 255, 255;
+    --card-rgb: 254, 254, 252;
+    // --foreground: 41, 41, 41;
 
     --light-blue: #e4e9f0;
     --dark-blue: #3a5185;
@@ -17,12 +17,12 @@
     --light-grey: #b8c1c7;
     --dark-grey: #5f687b;
 
-    --earthy: #92937d;
-    --muted-gold: #c69851;
+    // --earthy: #92937d;
+    // --muted-gold: #c69851;
 
     --light-sage: #b9cbc3;
-    --sage: #8fa59a;
-    --dark-sage: #6e8b90;
+    // --sage: #8fa59a;
+    // --dark-sage: #6e8b90;
 
     --light-green: #b1c46f;
     --dark-green: #8ba468;

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-@import url('https://fonts.adobe.com/fonts/antonia-variable?vf-font-size=14&vf-font=AntoniaVariable&vf-instance=Roman');
-@import url('https://fonts.adobe.com/fonts/antonia-variable?vf-font-size=23&vf-font=AntoniaVarItalic-Default&vf-axes=opsz%2C10%2Cwght%2C300');
-@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+/* @import url('https://fonts.adobe.com/fonts/antonia-variable?vf-font-size=14&vf-font=AntoniaVariable&vf-instance=Roman'); */
+/* @import url('https://fonts.adobe.com/fonts/antonia-variable?vf-font-size=23&vf-font=AntoniaVarItalic-Default&vf-axes=opsz%2C10%2Cwght%2C300'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap'); */
 
 html,
 body {
@@ -15,17 +17,26 @@ body {
 
 body {
   min-height: 100vh;
-  background: var(--background);
+  background: var(--background-hex);
 
   /* font-family: 'antonia-variable', sans-serif;
   font-variation-settings:
     'wght' 300,
     'opsz' 8; */
 
-  font-family: 'Bitter', serif;
+  /* font-family: 'Bitter', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal; */
+
+  font-family: 'Lora', serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+
+  /* font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  font-style: normal; */
 
   font-size: 16px;
 }
