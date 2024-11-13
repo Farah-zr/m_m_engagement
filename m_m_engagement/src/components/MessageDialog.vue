@@ -20,7 +20,8 @@
         "
       >
         <DialogHeader class="px-3 pt-3">
-          <DialogTitle class="text-xl text-muted-gold flex items-center">
+          <!-- * color here -->
+          <DialogTitle class="text-[18px] text-muted-gold flex items-center">
             <slot name="icon"></slot>
             <span>{{ title }}</span>
           </DialogTitle>
@@ -33,13 +34,14 @@
         </div>
 
         <DialogFooter class="px-3 pb-3" :class="'sm:justify-end'">
-          <Button :variant="'default'" size="sm" class="sm:w-[62px]" @click="closeDialog">
+          <Button :variant="'default'" size="sm" class="h-[30px]" @click="closeDialog">
             Close
           </Button>
         </DialogFooter>
 
         <DialogClose @close-dialog="closeDialog">
-          <Icon icon="lucide:x" />
+          <!-- * color here -->
+          <Icon icon="lucide:x" class="text-sage" />
         </DialogClose>
       </DialogContent>
     </Dialog>

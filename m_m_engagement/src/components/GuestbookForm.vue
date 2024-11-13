@@ -4,7 +4,9 @@
     <div class="card-wrap absolute top-1/2 left-1/2">
       <Card class="card px-4 py-3 grid gap-4 rounded-[4px]">
         <CardHeader class="grid gap-2 text-center p-0">
-          <CardTitle class="font-medium text-muted-gold"> M & M Love Journal </CardTitle>
+          <CardTitle class="font-medium text-muted-gold text-[18px]">
+            M & M Love Journal
+          </CardTitle>
           <CardDescription class="text-dark-sage">
             A message from your heart is the best gift we could receive today. We can't wait to read
             your words of love!
@@ -52,11 +54,11 @@
   <template v-if="showModal">
     <MessageDialog
       :withTrigger="false"
-      title="Sent Successfully"
-      width="w-[270px]"
+      title="Message Sent"
+      width="w-[250px]"
       @close="showModal = false"
     >
-      <template #dialog-content> Thank you! Your message has been successfully sent. </template>
+      <template #dialog-content> Thank you! We're excited to read your sweet message! </template>
     </MessageDialog>
   </template>
 </template>
