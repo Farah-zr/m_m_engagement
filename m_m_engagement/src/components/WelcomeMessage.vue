@@ -1,8 +1,8 @@
 <template>
-  <div class="welcome-msg flex flex-col items-center justify-center gap-5 mx-4">
+  <div class="welcome-msg text-earthy flex flex-col items-center justify-center gap-5 mx-4">
     <div class="flex flex-col gap-[6px] items-center text-center text-[24px]">
       <!-- <div class="">Welcome to</div>
-      <div class="antonia-italic text-[34px] text-[var(--muted-gold)] text-center">
+      <div class="antonia-italic text-[34px] text-muted-gold text-center">
         Mariam <br />
         & <br />
         Mohammed
@@ -35,7 +35,7 @@
 
 <style lang="scss" scoped>
 .welcome-msg {
-  color: var(--earthy);
+  // color: var(--earthy);
   height: 100%;
 }
 </style>

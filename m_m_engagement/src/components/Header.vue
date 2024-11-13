@@ -3,7 +3,7 @@
     <header>
       <div class="header-wrapper">
         <!-- <div class="logo parisienne-regular">Mohammed & Mariam</div> -->
-        <div class="logo parisienne-regular font-medium">
+        <div class="logo text-sage parisienne-regular font-medium">
           <RouterLink to="/">M & M</RouterLink>
         </div>
       </div>
@@ -19,8 +19,8 @@ header {
   width: 100%;
   height: 40px;
   position: relative;
-  background: rgba(var(--header), 0.75);
-  border-bottom: 1px solid var(--border);
+  background: rgba(var(--header-rgb), 0.75);
+  border-bottom: 1px solid var(--border-hex);
   box-shadow: 0px 1px 1px rgba(var(--foreground), 0.1);
 }
 
@@ -35,7 +35,7 @@ header {
 
 .logo {
   font-size: 22px;
-  color: var(--sage);
+  // color: var(--sage);
 }
 </style>
 
