@@ -2,7 +2,7 @@
   <!-- <div class="flex flex-col items-center justify-center h-full"> -->
   <div class="fixed top-0 left-0 h-full w-full">
     <div class="card-wrap absolute top-1/2 left-1/2">
-      <Card class="card px-4 py-3 grid gap-4 rounded-[4px]">
+      <Card class="card px-4 py-3 grid gap-4 rounded-[4px] md:w-[400px]">
         <CardHeader class="grid gap-2 text-center p-0">
           <CardTitle class="font-medium text-muted-gold text-[18px]">
             M & M Love Journal
@@ -13,14 +13,32 @@
           </CardDescription>
         </CardHeader>
 
-        <CardContent class="w-full p-0 grid gap-4">
-          <div class="grid gap-1 w-full">
+        <CardContent class="w-full p-0 grid">
+          <div class="flex flex-col gap-1 w-full h-[72px]">
             <Label class="text-muted-gold">Name</Label>
             <Input
               v-model:model-value="guestName"
               placeholder="Enter your name"
               class="px-2 py-1 w-full"
             />
+          </div>
+
+          <div class="flex flex-col w-full h-[72px]">
+            <div class="grid gap-1">
+              <Label class="text-muted-gold">Email</Label>
+              <Input
+                v-model:model-value="guestEmail"
+                @input="
+                  (e) => {
+                    guestEmail = e.target.value
+                    invalidEmail = !validateEmail(e.target.value)
+                  }
+                "
+                placeholder="Enter your email"
+                class="px-2 py-1 w-full"
+              />
+            </div>
+            <p v-if="invalidEmail" class="text-red-700 text-[11px]">Invalid email</p>
           </div>
 
           <div class="grid gap-1 w-full">
@@ -55,7 +73,7 @@
     <MessageDialog
       :withTrigger="false"
       title="Message Sent"
-      width="w-[250px]"
+      width="w-[250px] md:w-[300px]"
       @close="showModal = false"
     >
       <template #dialog-content> Thank you! We're excited to read your sweet message! </template>
@@ -92,23 +110,32 @@ import MessageDialog from './MessageDialog.vue'
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID
 const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY
-const FROM_EMAIL = import.meta.env.VITE_FROM_EMAIL
 
 const guestName = ref('')
+const guestEmail = ref('')
 const guestMsg = ref('')
 
 const loading = ref(false)
 const showModal = ref(false)
+const invalidEmail = ref(false)
 
 function sendGuestMsg() {
   loading.value = true
+
+  if (!validateEmail(guestEmail.value)) {
+    invalidEmail.value = true
+    loading.value = false
+    return
+  }
+
+  invalidEmail.value = false
 
   send(
     SERVICE_ID,
     TEMPLATE_ID,
     {
       from_name: guestName.value,
-      from_email: FROM_EMAIL,
+      from_email: guestEmail.value,
       message: guestMsg.value
     },
     PUBLIC_KEY
@@ -118,10 +145,16 @@ function sendGuestMsg() {
       loading.value = false
       showModal.value = true
       guestName.value = ''
+      guestEmail.value = ''
       guestMsg.value = ''
     })
     .catch((error) => {
       console.error('Error:', error)
     })
+}
+
+function validateEmail(email) {
+  const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+  return regex.test(email)
 }
 </script>
